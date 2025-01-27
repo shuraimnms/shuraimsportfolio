@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My 3D Portfolio</title>
+    <title>Shuraim's 3D Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <h1>My 3D Portfolio</h1>
+            <h1>Shuraim's 3D Portfolio</h1>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" onclick="navigateToSection('about')">About Me</a></li>
+                <li><a href="#projects" onclick="navigateToSection('projects')">Projects</a></li>
+                <li><a href="#contact" onclick="navigateToSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,17 +30,32 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Write a short bio here.</p>
+        <p>Hi, I'm Shuraim! I'm a web developer and designer with a passion for creating 3D interactive experiences. My skills include HTML, CSS, JavaScript, and working with libraries like Three.js and GSAP.</p>
+        <p>Welcome to my portfolio!</p>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
-        <p>Showcase your amazing work here!</p>
+        <h2>My Projects</h2>
+        <div class="project-list">
+            <div class="project-card" onclick="showProjectDetails('project1')">
+                <h3>Project 1: 3D Animation</h3>
+                <p>Interactive 3D animations created with Three.js.</p>
+            </div>
+            <div class="project-card" onclick="showProjectDetails('project2')">
+                <h3>Project 2: Portfolio Website</h3>
+                <p>My personal portfolio built with HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Let’s connect!</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="email" id="email" placeholder="Your Email" required />
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.133.0/build/three.min.js"></script>
@@ -43,3 +63,46 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm Shuraim! I'm a web developer and designer with a passion for creating 3D interactive experiences. My skills include:</p>
+    <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Three.js for 3D Graphics</li>
+        <li>GSAP for animations</li>
+        <li>Responsive Web Design</li>
+        <li>UI/UX Design</li>
+    </ul>
+    <p>Welcome to my portfolio, where you can see some of the projects I’ve worked on!</p>
+    <img src="https://via.placeholder.com/150" alt="Shuraim's Profile Image">
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-list">
+            <div class="project-card" onclick="showProjectDetails('project1')">
+                <h3>Project 1: zikrmate</h3>
+                <p>Interactive 3D animations using Three.js.</p>
+            </div>
+            <div class="project-card" onclick="showProjectDetails('project2')">
+                <h3>Project 2: Portfolio Website</h3>
+                <p>My personal portfolio built with HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project details container -->
+    <section id="project-details" style="display: none;">
+        <h2>Project Details</h2>
+        <div id="project-title"></div>
+        <div id="project-description"></div>
+        <button onclick="closeProjectDetails()">Close</button>
+    </section>
+    
+<section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm" onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
