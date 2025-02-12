@@ -1,0 +1,18 @@
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Scale-up animation */
+.scale-up {
+    transform: scale(0.8);
+    transition: transform 0.8s ease-out;
+}
+
+/* When elements appear */
+.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
